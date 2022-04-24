@@ -1,1 +1,1 @@
-# Onegator
+# Stand Alone Gateway Code
