@@ -14,7 +14,7 @@
     This header file provides implementations for pin APIs for all pins selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.7
-        Device            :  PIC18F06Q41
+        Device            :  PIC18F15Q41
         Driver Version    :  2.11
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.31 and above
@@ -57,24 +57,28 @@ void PIN_MANAGER_Initialize(void)
     /**
     LATx registers
     */
-    LATA = 0x00;
+    LATA = 0x10;
+    LATB = 0x00;
     LATC = 0x00;
 
     /**
     TRISx registers
     */
-    TRISA = 0x3F;
-    TRISC = 0x33;
+    TRISA = 0x2F;
+    TRISB = 0x30;
+    TRISC = 0xFF;
 
     /**
     ANSELx registers
     */
-    ANSELC = 0x13;
+    ANSELC = 0x33;
+    ANSELB = 0x00;
     ANSELA = 0x37;
 
     /**
     WPUx registers
     */
+    WPUB = 0x00;
     WPUA = 0x00;
     WPUC = 0x00;
 
@@ -82,19 +86,22 @@ void PIN_MANAGER_Initialize(void)
     ODx registers
     */
     ODCONA = 0x00;
+    ODCONB = 0x00;
     ODCONC = 0x00;
 
     /**
     SLRCONx registers
     */
     SLRCONA = 0x37;
-    SLRCONC = 0x33;
+    SLRCONB = 0xF0;
+    SLRCONC = 0xFF;
 
     /**
     INLVLx registers
     */
     INLVLA = 0x3F;
-    INLVLC = 0x3F;
+    INLVLB = 0xF0;
+    INLVLC = 0xFF;
 
 
 
@@ -103,10 +110,10 @@ void PIN_MANAGER_Initialize(void)
    
     
 	
-    SPI1SCKPPS = 0x12;   //RC2->SPI1:SCK1;    
-    RC3PPS = 0x1C;   //RC3->SPI1:SDO1;    
-    RC2PPS = 0x1B;   //RC2->SPI1:SCK1;    
-    SPI1SDIPPS = 0x15;   //RC5->SPI1:SDI1;    
+    SPI1SCKPPS = 0x0E;   //RB6->SPI1:SCK1;    
+    RB6PPS = 0x1B;   //RB6->SPI1:SCK1;    
+    RB7PPS = 0x1C;   //RB7->SPI1:SDO1;    
+    SPI1SDIPPS = 0x12;   //RC2->SPI1:SDI1;    
 }
   
 void PIN_MANAGER_IOC(void)

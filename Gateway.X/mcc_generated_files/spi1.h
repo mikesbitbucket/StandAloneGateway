@@ -14,7 +14,7 @@
     This header file provides APIs for driver for SPI1.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.7
-        Device            :  PIC18F06Q41
+        Device            :  PIC18F15Q41
         Driver Version    :  1.0.0
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.31 and above or later

@@ -14,7 +14,7 @@
     This header file provides implementations for driver APIs for SPI1.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.7
-        Device            :  PIC18F06Q41
+        Device            :  PIC18F15Q41
         Driver Version    :  1.0.0
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.31 and above or later
@@ -58,7 +58,7 @@ typedef struct {
 
 //con0 == SPIxCON0, con1 == SPIxCON1, con2 == SPIxCON2, baud == SPIxBAUD, operation == Master/Slave
 static const spi1_configuration_t spi1_configuration[] = {   
-    { 0x2, 0x40, 0x2, 0x09, 0 }
+    { 0x2, 0x40, 0x2, 0x9, 0 }
 };
 
 void SPI1_Initialize(void)
@@ -73,7 +73,7 @@ void SPI1_Initialize(void)
     SPI1CLK = 0x00;
     //BAUD 9; 
     SPI1BAUD = 0x09;
-    TRISCbits.TRISC2 = 0;
+    TRISBbits.TRISB6 = 0;
 }
 
 bool SPI1_Open(spi1_modes_t spi1UniqueConfiguration)
@@ -85,7 +85,7 @@ bool SPI1_Open(spi1_modes_t spi1UniqueConfiguration)
         SPI1CON2 = spi1_configuration[spi1UniqueConfiguration].con2 | (_SPI1CON2_SPI1RXR_MASK | _SPI1CON2_SPI1TXR_MASK);
         SPI1CLK  = 0x00;
         SPI1BAUD = spi1_configuration[spi1UniqueConfiguration].baud;        
-        TRISCbits.TRISC2 = spi1_configuration[spi1UniqueConfiguration].operation;
+        TRISBbits.TRISB6 = spi1_configuration[spi1UniqueConfiguration].operation;
         SPI1CON0bits.EN = 1;
         return true;
     }

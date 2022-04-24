@@ -14,7 +14,7 @@
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.7
-        Device            :  PIC18F06Q41
+        Device            :  PIC18F15Q41
         Driver Version    :  2.00
 */
 
@@ -67,11 +67,11 @@ void main(void)
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
 
-    //i = SPI1_Open(0);
+ //   i = SPI1_Open(0);
     
     SPI1INTFbits.TCZIF = 0; // Reset Zero Flag
     
-    //SPI1CON0bits.EN = 1;
+ //   SPI1CON0bits.EN = 1;
     
     while (1)
     {
