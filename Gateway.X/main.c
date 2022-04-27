@@ -80,27 +80,36 @@ void main(void)
         
         Write_LED_Array(255, 0, 0);
         Write_LEDs();
-        __delay_ms(500);
+        for(i=0; i < 10; i++)
+        {
+            __delay_ms(500);
+        }
 //        //__delay_ms(500);
-        Write_LED_Array(255, 255, 0);
-        Write_LEDs();
-        __delay_ms(500);
+//        Write_LED_Array(255, 255, 0);
+//        Write_LEDs();
+//        __delay_ms(500);
         //__delay_ms(500);
         Write_LED_Array(0, 255, 0);
         Write_LEDs();
-        __delay_ms(500);
+        for(i=0; i < 10; i++)
+        {
+            __delay_ms(500);
+        }
 //       // __delay_ms(500);
         Write_LED_Array(0, 255, 255);
         Write_LEDs();
-        __delay_ms(500);
+        for(i=0; i < 10; i++)
+        {
+            __delay_ms(500);
+        }
         //__delay_ms(500);
-        Write_LED_Array(0, 0, 255);
-        Write_LEDs();
-        __delay_ms(500);
+//        Write_LED_Array(0, 0, 255);
+//        Write_LEDs();
+//        __delay_ms(500);
         //__delay_ms(500);
-        Write_LED_Array(255, 0, 255);
-        Write_LEDs();
-        __delay_ms(500);
+//        Write_LED_Array(255, 0, 255);
+//        Write_LEDs();
+//        __delay_ms(500);
 //        //__delay_ms(500);
         
         
